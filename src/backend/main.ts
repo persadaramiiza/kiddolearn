@@ -62,10 +62,13 @@ async function bootstrap() {
     .setVersion('1.0')
     .addBearerAuth()
     .addTag('Auth', 'Authentication endpoints')
+    .addTag('Users', 'User management')
     .addTag('Profiles', 'Profile management')
     .addTag('Videos', 'Video management')
     .addTag('Quizzes', 'Quiz management')
+    .addTag('Watch History', 'Watch history and video progress tracking')
     .addTag('Health', 'Health check endpoints')
+    .addTag('Root', 'Root endpoints')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

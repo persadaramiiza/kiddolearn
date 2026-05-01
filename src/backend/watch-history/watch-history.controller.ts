@@ -8,13 +8,16 @@ import {
     ParseIntPipe,
     UseGuards,
 } from '@nestjs/common';
+import { ApiTags, ApiOperation, ApiBearerAuth, ApiBody } from '@nestjs/swagger';
 import { WatchHistoryService } from './watch-history.service';
 import { SaveProgressDto } from './dto/save-progress.dto';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { CurrentUser } from '../auth/current-user.decorator';
 import type { JwtUser } from '../auth/jwt-user.interface';
 
+@ApiTags('Watch History')
 @Controller('api/video')
+@ApiBearerAuth()
 export class WatchHistoryController {
     constructor(private readonly watchHistoryService: WatchHistoryService) { }
 
@@ -22,6 +25,8 @@ export class WatchHistoryController {
     // Body: { profileId, videoId, timestampSeconds, isCompleted? }
     @UseGuards(JwtAuthGuard)
     @Post('progress')
+    @ApiOperation({ summary: 'Save video progress' })
+    @ApiBody({ type: SaveProgressDto })
     async saveProgress(
         @CurrentUser() user: JwtUser,
         @Body() dto: SaveProgressDto,
@@ -46,6 +51,7 @@ export class WatchHistoryController {
     // GET /api/video/1/progress?profileId=2
     @UseGuards(JwtAuthGuard)
     @Get(':videoId/progress')
+    @ApiOperation({ summary: 'Get video progress for a profile' })
     async getProgress(
         @CurrentUser() user: JwtUser,
         @Param('videoId', ParseIntPipe) videoId: number,
@@ -72,6 +78,7 @@ export class WatchHistoryController {
     }
     @UseGuards(JwtAuthGuard)
     @Get('continue-watching')
+    @ApiOperation({ summary: 'Get continue watching list' })
     async getContinueWatching(
         @CurrentUser() user: JwtUser,
         @Query('profileId') profileIdStr: string,
@@ -85,6 +92,7 @@ export class WatchHistoryController {
     }
     @UseGuards(JwtAuthGuard)
     @Get('recent')
+    @ApiOperation({ summary: 'Get recent videos' })
     async getRecent(
         @CurrentUser() user: JwtUser,
         @Query('profileId') profileIdStr: string,
