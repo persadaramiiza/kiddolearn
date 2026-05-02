@@ -42,7 +42,7 @@ export default function Navbar() {
               'text-xl font-bold transition-colors duration-300',
               isScrolled ? 'text-gray-800' : 'text-white'
             )}>
-              EduToon
+              KiddoLearn
             </span>
           </Link>
 

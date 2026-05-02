@@ -224,7 +224,7 @@ export default function CreatorDashboard() {
             <div className="h-10 w-10 transition-transform group-hover:rotate-12 duration-300 filter drop-shadow-md">
               <img
                 src="/images/desain-20tanpa-20judul-20-286-29.png"
-                alt="EduToon Logo"
+                alt="KiddoLearn Logo"
                 className="object-contain w-full h-full"
               />
             </div>

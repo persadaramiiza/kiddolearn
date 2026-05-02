@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EduToon - Konten Edukatif untuk Anak",
+  title: "KiddoLearn - Konten Edukatif untuk Anak",
   description: "Platform video edukatif berbasis webtoon untuk anak-anak Indonesia",
   icons: {
     icon: "/images/desain-20tanpa-20judul-20-286-29.png",

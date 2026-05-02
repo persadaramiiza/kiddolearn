@@ -98,7 +98,7 @@ export default function ProfileDashboardPage() {
             <div className="h-6 w-px bg-[#FFE0B2]"></div>
             <div className="flex items-center gap-2">
               <span className="text-2xl">🎬</span>
-              <h1 className="text-xl font-black text-[#D94D2B]">EduToon</h1>
+              <h1 className="text-xl font-black text-[#D94D2B]">KiddoLearn</h1>
             </div>
           </div>
           <div className="flex items-center gap-3">

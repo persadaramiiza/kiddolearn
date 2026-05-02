@@ -99,12 +99,12 @@ export default function DashboardPage() {
             <div className="relative h-8 w-8 sm:h-10 sm:w-10 transition-transform group-hover:rotate-12 duration-300">
               <img
                 src="/images/desain-20tanpa-20judul-20-286-29.png"
-                alt="EduToon Logo"
+                alt="KiddoLearn Logo"
                 className="object-contain w-full h-full"
               />
             </div>
             <span className="text-xl sm:text-2xl font-black tracking-tight text-[#D94D2B] drop-shadow-sm group-hover:text-[#FF7A00] transition-colors">
-              EduToon
+              KiddoLearn
             </span>
           </div>
           <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">

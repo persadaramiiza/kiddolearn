@@ -87,12 +87,12 @@ export default function LandingPage() {
             <div className="relative h-10 w-10 md:h-14 md:w-14 transition-transform group-hover:rotate-12 duration-300 filter drop-shadow-md">
               <img
                 src="/images/desain-20tanpa-20judul-20-286-29.png"
-                alt="EduToon Logo"
+                alt="KiddoLearn Logo"
                 className="object-contain w-full h-full"
               />
             </div>
             <span className="text-xl md:text-3xl font-black tracking-tight text-[#D94D2B] drop-shadow-sm group-hover:text-[#FF7A00] transition-colors">
-              EduToon
+              KiddoLearn
             </span>
           </div>
 
@@ -230,7 +230,7 @@ export default function LandingPage() {
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="text-lg sm:text-xl md:text-2xl text-[#8B7355] max-w-[700px] font-bold leading-relaxed mx-auto drop-shadow-sm px-4"
                   >
-                    EduToon invites kids to learn while playing with interactive videos. Fun quizzes make understanding
+                    KiddoLearn invites kids to learn while playing with interactive videos. Fun quizzes make understanding
                     even better! 🚀
                   </motion.p>
                 
@@ -371,7 +371,7 @@ export default function LandingPage() {
               className="text-center mb-12 md:mb-16 max-w-4xl mx-auto bg-white/80 backdrop-blur-sm p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl border-4 border-white ring-4 ring-[#FF7A00]/10"
             >
               <span className="inline-block px-4 py-1.5 md:px-6 md:py-2 rounded-full bg-[#FF7A00] text-white font-black tracking-wider uppercase text-xs md:text-sm mb-4 md:mb-6 shadow-lg transform -rotate-2 hover:rotate-0 transition-transform">
-                Why EduToon?
+                Why KiddoLearn?
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[#4A4A4A] mt-2 mb-4 md:mb-6">
                 Learning Should Be{" "}
@@ -499,7 +499,7 @@ export default function LandingPage() {
             </motion.div>
             <div className="grid gap-8 grid-cols-1 md:grid-cols-3 pt-10 md:pt-0">
               {[
-                { name: "Mama Sarah", role: "Mother of 2", avatar: "/images/rabbit-avatar.png", bg: "bg-pink-50", text: "EduToon is a lifesaver! My kids engage with the quizzes instead of just staring at the screen." },
+                { name: "Mama Sarah", role: "Mother of 2", avatar: "/images/rabbit-avatar.png", bg: "bg-pink-50", text: "KiddoLearn is a lifesaver! My kids engage with the quizzes instead of just staring at the screen." },
                 { name: "Papa Doni", role: "Father of Budi", avatar: "/images/lion-avatar.png", bg: "bg-orange-50", text: "The safety features give me peace of mind. Finally, a platform I can trust 100%." },
                 { name: "Bunda Rina", role: "Mother of 5yo", avatar: "/images/panda-avatar.png", bg: "bg-blue-50", text: "My son learned to count in just a week! The characters are so cute and friendly." },
               ].map((review, i) => (
@@ -575,11 +575,11 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-center md:text-left">
           <div className="flex items-center gap-3 justify-center md:justify-start">
             <div className="h-8 w-8 md:h-10 md:w-10">
-              <img src="/images/desain-20tanpa-20judul-20-286-29.png" alt="EduToon Logo" className="object-contain w-full h-full" />
+              <img src="/images/desain-20tanpa-20judul-20-286-29.png" alt="KiddoLearn Logo" className="object-contain w-full h-full" />
             </div>
-            <span className="text-xl md:text-2xl font-black tracking-tight text-[#4A4A4A]">EduToon</span>
+            <span className="text-xl md:text-2xl font-black tracking-tight text-[#4A4A4A]">KiddoLearn</span>
           </div>
-          <p className="text-xs md:text-sm font-bold text-[#8B7355]/50">© 2025 EduToon. Growing Smarter Together.</p>
+          <p className="text-xs md:text-sm font-bold text-[#8B7355]/50">© 2025 KiddoLearn. Growing Smarter Together.</p>
         </div>
       </footer>
     </div>

@@ -64,7 +64,7 @@ export default function RegisterPage() {
       <div className="hidden md:flex md:w-5/12 relative items-center justify-center p-12 z-10 bg-[#FFF5E5] border-r-4 border-[#FFE0B2]">
         <div className="relative w-full max-w-lg text-center">
           <div className="mb-8 relative inline-block">
-             <img src="/images/desain-20tanpa-20judul-20-286-29.png" alt="EduToon Logo" className="h-20 mx-auto drop-shadow-lg" />
+             <img src="/images/desain-20tanpa-20judul-20-286-29.png" alt="KiddoLearn Logo" className="h-20 mx-auto drop-shadow-lg" />
           </div>
           <h1 className="text-4xl lg:text-5xl font-black text-[#4A4A4A] mb-6 leading-tight">
             Join the <br/>
