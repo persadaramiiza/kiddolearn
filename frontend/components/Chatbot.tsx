@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
+
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([{ sender: 'bot', text: 'Halo! Ada yang bisa dibantu?' }]);
@@ -22,7 +24,7 @@ export default function Chatbot() {
     setIsLoading(true); 
     
     try {
-      const response = await fetch('http://localhost:3000/chat', { 
+      const response = await fetch(`${API_URL.replace(/\/api\/?$/, '')}/chat`, { 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMessage }),
