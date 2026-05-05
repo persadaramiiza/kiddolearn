@@ -24,6 +24,12 @@ async function bootstrap() {
   ].filter(Boolean);
 
   app.enableCors({
+    origin: 'http://localhost:3333', // Port Next.js kamu
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  });
+
+  app.enableCors({
     origin: (origin, callback) => {
       // Allow requests with no origin (mobile apps, curl, etc)
       if (!origin) return callback(null, true);

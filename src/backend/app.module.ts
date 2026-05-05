@@ -6,6 +6,7 @@ import { APP_GUARD } from '@nestjs/core';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ChatModule } from './chat/chat.module';
 
 import { User } from './users/user.entity';
 import { Profile } from './profiles/profile.entity';
@@ -59,6 +60,7 @@ import { HealthModule } from './health/health.module';
     QuizzesModule,
     WatchHistoryModule,
     HealthModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [
