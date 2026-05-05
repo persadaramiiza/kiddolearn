@@ -23,6 +23,8 @@ yarn.lock
 .env.development
 *.env
 *.env.*
+!.env.example
+!frontend/.env.example
 
 # ------------------------------------------------------
 # Backend (NestJS)

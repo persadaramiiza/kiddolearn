@@ -20,14 +20,8 @@ async function bootstrap() {
     'http://localhost:3333',
     'https://edutoon.space',
     'https://www.edutoon.space',
-    process.env.FRONTEND_URL,
-  ].filter(Boolean);
-
-  app.enableCors({
-    origin: 'http://localhost:3333', // Port Next.js kamu
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-  });
+    ...(process.env.FRONTEND_URL?.split(',') ?? []),
+  ].map((origin) => origin.trim()).filter(Boolean);
 
   app.enableCors({
     origin: (origin, callback) => {
@@ -38,7 +32,7 @@ async function bootstrap() {
         callback(null, true);
       } else {
         logger.warn(`CORS blocked origin: ${origin}`);
-        callback(null, true); // Allow all for now, but log it
+        callback(new Error('Not allowed by CORS'));
       }
     },
     credentials: true,
