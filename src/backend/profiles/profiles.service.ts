@@ -35,7 +35,7 @@ export class ProfilesService {
   }
 
   async findOne(id: number): Promise<Profile | null> {
-    return this.profilesRepo.findOne({ where: { id } });
+    return (await this.profilesRepo.findOne({ where: { id } })) ?? null;
   }
 
   async findOneByUser(id: number, userId: number): Promise<Profile> {

@@ -16,6 +16,7 @@ import { ProfilesModule } from './profiles/profiles.module';
 
 import { VideosModule } from './videos/videos.module';
 import { Video } from './videos/video.entity';
+import { VideoProgress } from './videos/video-progress.entity';
 
 import { Quiz } from './quizzes/quiz.entity';
 import { QuizOption } from './quizzes/quiz-option.entity';
@@ -46,7 +47,7 @@ import { HealthModule } from './health/health.module';
         username: config.get('DB_USER'),
         password: config.get('DB_PASS'),
         database: config.get('DB_NAME'),
-        entities: [User, Profile, Video, Quiz, QuizOption, QuizAttempt, WatchHistory],
+        entities: [User, Profile, Video, VideoProgress, Quiz, QuizOption, QuizAttempt, WatchHistory],
         synchronize: process.env.NODE_ENV !== 'production',
         logging: false,
       }),
