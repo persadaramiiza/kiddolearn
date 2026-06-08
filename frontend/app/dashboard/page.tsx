@@ -108,6 +108,15 @@ export default function DashboardPage() {
             </span>
           </div>
           <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+            <button
+              onClick={() => router.push('/guide/parents')}
+              className="bg-white border border-[#FFE0B2] rounded-full px-3 py-1.5 sm:px-4 sm:py-2 flex items-center gap-2 text-[#8B7355] font-bold hover:bg-[#FFF5E5] hover:text-[#FF7A00] transition-colors"
+            >
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M8.228 9a3.75 3.75 0 117.244 1.5c-.555.89-1.472 1.261-2.211 1.765-.711.484-1.261 1.049-1.261 2.235m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-sm sm:text-base">Help</span>
+            </button>
             <div 
               onClick={() => router.push('/profile')}
               className="bg-[#FFF5E5] border border-[#FFE0B2] rounded-full px-3 py-1.5 sm:px-4 sm:py-2 flex items-center gap-2 cursor-pointer hover:bg-[#FFE0B2] transition-colors"

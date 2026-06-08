@@ -234,6 +234,15 @@ export default function CreatorDashboard() {
             </div>
           </div>
           <div className="flex items-center gap-4">
+            <button
+              onClick={() => router.push('/guide/creator')}
+              className="flex items-center gap-2 bg-white border-2 border-[#FFE0B2] text-[#8B7355] px-3 py-2 sm:px-4 rounded-full shadow-sm hover:border-[#FF7A00] hover:text-[#FF7A00] transition-all hover:shadow-md hover:-translate-y-0.5 font-bold"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8.228 9a3.75 3.75 0 117.244 1.5c-.555.89-1.472 1.261-2.211 1.765-.711.484-1.261 1.049-1.261 2.235m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="hidden sm:inline">Help</span>
+            </button>
             <div 
               onClick={() => setShowProfileModal(true)}
               className="hidden sm:flex items-center gap-2 bg-[#FFF5E5] border-2 border-[#FFE0B2] text-[#8B7355] px-4 py-2 rounded-full shadow-sm cursor-pointer hover:border-[#FF7A00] transition-all hover:shadow-md hover:-translate-y-0.5"

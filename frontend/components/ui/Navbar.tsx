@@ -10,6 +10,8 @@ export default function Navbar() {
   const { user, logout } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isCreatorRole = user?.role === 'creator' || user?.role === 'admin';
+  const guideHref = isCreatorRole ? '/guide/creator' : '/guide/parents';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,13 +53,22 @@ export default function Navbar() {
             {user ? (
               <>
                 <Link
-                  href={user.role === 'creator' ? '/creator' : '/dashboard'}
+                  href={isCreatorRole ? '/creator' : '/dashboard'}
                   className={cn(
                     'font-medium transition-colors duration-300',
                     isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white/80 hover:text-white'
                   )}
                 >
                   Dashboard
+                </Link>
+                <Link
+                  href={guideHref}
+                  className={cn(
+                    'font-medium transition-colors duration-300',
+                    isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white/80 hover:text-white'
+                  )}
+                >
+                  Help
                 </Link>
                 <div className="flex items-center gap-4">
                   <div 
@@ -133,11 +144,18 @@ export default function Navbar() {
             {user ? (
               <>
                 <Link
-                  href={user.role === 'creator' ? '/creator' : '/dashboard'}
+                  href={isCreatorRole ? '/creator' : '/dashboard'}
                   className="block text-gray-600 hover:text-blue-600 font-medium py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Dashboard
+                </Link>
+                <Link
+                  href={guideHref}
+                  className="block text-gray-600 hover:text-blue-600 font-medium py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Help
                 </Link>
                 <Link
                   href="/profile"

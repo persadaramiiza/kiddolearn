@@ -9,11 +9,12 @@ Aplikasi KiddoLearn sudah dikonfigurasi untuk terhubung dengan Supabase PostgreS
 ### 1. **Environment Variables (.env)**
 File `.env` sudah dikonfigurasi dengan Supabase credentials:
 ```
-DB_HOST=db.rznbwjmhhazfouhjcwkf.supabase.co
+DB_HOST=aws-1-ap-southeast-1.pooler.supabase.com
 DB_PORT=5432
-DB_USER=postgres
+DB_USER=postgres.yohevwfqqapqasjybkkn
 DB_PASS=[YOUR-PASSWORD]  ← Ganti dengan password Supabase Anda
 DB_NAME=postgres
+DB_SSL=true
 ```
 
 ### 2. **Database Configuration (app.module.ts)**
@@ -59,11 +60,12 @@ NODE_ENV=production pnpm run start:prod
 ## ⚙️ Configuration Details
 
 **Database Parameters:**
-- **Host:** db.rznbwjmhhazfouhjcwkf.supabase.co (Supabase Region)
+- **Host:** aws-1-ap-southeast-1.pooler.supabase.com (Supabase Session Pooler)
 - **Port:** 5432 (Default PostgreSQL)
 - **User:** postgres (Default Supabase user)
 - **Database:** postgres (Default database)
 - **Driver:** pg (Node.js PostgreSQL client)
+- **SSL:** set `DB_SSL=true` untuk koneksi Supabase
 
 **TypeORM Settings:**
 - **Synchronize:** true (development), false (production)
@@ -81,19 +83,16 @@ NODE_ENV=production pnpm run start:prod
    ```bash
    # Di production, gunakan environment variables:
    NODE_ENV=production
-   DB_HOST=db.rznbwjmhhazfouhjcwkf.supabase.co
+   DB_HOST=aws-1-ap-southeast-1.pooler.supabase.com
    DB_PORT=5432
-   DB_USER=postgres
+   DB_USER=postgres.yohevwfqqapqasjybkkn
    DB_PASS=your_actual_password
    DB_NAME=postgres
    ```
 
 3. **SSL Connection (Production):**
    - Supabase menggunakan SSL untuk koneksi database
-   - Jika perlu force SSL, tambahkan ke app.module.ts:
-   ```typescript
-   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
-   ```
+   - Set `DB_SSL=true` di `.env`
 
 ## 🧪 Testing Connection
 
@@ -126,7 +125,7 @@ NODE_ENV=production pnpm run start:prod
 
 ### Connection Error
 ```
-Error: connect ENOTFOUND db.rznbwjmhhazfouhjcwkf.supabase.co
+Error: connect ENOTFOUND db.<PROJECT_REF>.supabase.co
 ```
 **Solution:**
 - Verify `.env` credentials
@@ -146,7 +145,7 @@ Error: password authentication failed for user "postgres"
 Error: self signed certificate
 ```
 **Solution:**
-- Enable SSL dengan `rejectUnauthorized: false` (seperti code di atas)
+- Pastikan `DB_SSL=true` di `.env`
 
 ## 📝 Next Steps
 

@@ -50,6 +50,7 @@ import { HealthModule } from './health/health.module';
         database: config.get('DB_NAME'),
         entities: [User, Profile, Video, VideoProgress, Quiz, QuizOption, QuizAttempt, WatchHistory],
         synchronize: process.env.NODE_ENV !== 'production',
+        ssl: config.get('DB_SSL') === 'true' ? { rejectUnauthorized: false } : false,
         logging: false,
       }),
     }),
