@@ -34,7 +34,7 @@ GEMINI_API_KEY=<gemini-api-key>
 Jika membuat Web Service manual, gunakan:
 
 ```bash
-npm ci && npm run build
+npm ci --legacy-peer-deps && npm run build
 ```
 
 Start command:
