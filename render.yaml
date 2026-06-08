@@ -3,7 +3,7 @@ services:
     name: kiddolearn-api
     runtime: node
     plan: free
-    buildCommand: corepack enable && corepack pnpm install --frozen-lockfile && corepack pnpm run build
+    buildCommand: corepack pnpm install --frozen-lockfile && corepack pnpm run build
     startCommand: corepack pnpm run start:prod
     healthCheckPath: /api/health/ping
     envVars:

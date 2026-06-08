@@ -34,7 +34,7 @@ GEMINI_API_KEY=<gemini-api-key>
 Jika membuat Web Service manual, gunakan:
 
 ```bash
-corepack enable && corepack pnpm install --frozen-lockfile && corepack pnpm run build
+corepack pnpm install --frozen-lockfile && corepack pnpm run build
 ```
 
 Start command:
