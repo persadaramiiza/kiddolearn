@@ -6,9 +6,21 @@ Project ini terdiri dari:
 - Frontend: Next.js di `frontend/`
 - Database: PostgreSQL, cocok memakai Supabase atau Neon
 
-## Opsi Gratis yang Direkomendasikan
+## Opsi Deployment
 
-### Opsi 1: Vercel + Render + Supabase
+### Opsi 1: Vercel Backend + Vercel Frontend + Supabase
+
+Backend NestJS sudah disiapkan untuk Vercel melalui `api/index.ts` dan `vercel.json`.
+
+Gunakan opsi ini kalau targetnya semua aplikasi web berada di Vercel:
+
+- Backend NestJS: Vercel Function
+- Frontend Next.js: Vercel project terpisah dengan root `frontend/`
+- Database PostgreSQL: Supabase
+
+Catatan: NestJS di Vercel berjalan sebagai serverless function, jadi request pertama bisa terkena cold start.
+
+### Opsi 2: Vercel + Render + Supabase
 
 Ini opsi paling mudah untuk demo:
 
@@ -18,7 +30,7 @@ Ini opsi paling mudah untuk demo:
 
 Kekurangannya: backend Render Free akan sleep setelah idle, jadi request pertama bisa lambat.
 
-### Opsi 2: Vercel + Koyeb + Neon
+### Opsi 3: Vercel + Koyeb + Neon
 
 Lebih cocok kalau ingin backend tetap pada free instance kecil:
 
@@ -28,9 +40,32 @@ Lebih cocok kalau ingin backend tetap pada free instance kecil:
 
 Kekurangannya: resource backend free kecil, jadi cocok untuk demo atau traffic ringan.
 
-### Opsi 3: Railway
+### Opsi 4: Railway
 
 Railway mudah untuk full stack, tetapi free tier utamanya berbasis kredit kecil. Cocok untuk testing singkat, bukan pilihan gratis jangka panjang.
+
+## Deploy Backend ke Vercel
+
+1. Push repository ke GitHub.
+2. Import repository di Vercel sebagai project backend.
+3. Root directory: kosongkan, gunakan root repository.
+4. Framework preset: Other.
+5. Pastikan Vercel membaca `vercel.json` di root.
+6. Tambahkan environment variables:
+   - `NODE_ENV=production`
+   - `FRONTEND_URL=https://domain-frontend.vercel.app`
+   - `DB_HOST=aws-1-ap-southeast-1.pooler.supabase.com`
+   - `DB_PORT=5432`
+   - `DB_USER=postgres.yohevwfqqapqasjybkkn`
+   - `DB_PASS`
+   - `DB_NAME=postgres`
+   - `DB_SSL=true`
+   - `JWT_SECRET`
+   - `JWT_EXPIRATION=24h`
+   - `GEMINI_API_KEY`
+7. Setelah deploy sukses, cek endpoint:
+   - `https://domain-backend.vercel.app/api/health/ping`
+   - `https://domain-backend.vercel.app/api/docs`
 
 ## Deploy Backend ke Render
 
@@ -65,7 +100,7 @@ Railway mudah untuk full stack, tetapi free tier utamanya berbasis kredit kecil.
 2. Set `Root Directory` ke `frontend`.
 3. Framework preset: Next.js.
 4. Tambahkan environment variable:
-   - `NEXT_PUBLIC_API_URL=https://nama-service.onrender.com/api`
+   - `NEXT_PUBLIC_API_URL=https://domain-backend.vercel.app/api`
 5. Deploy.
 
 ## Catatan Database
