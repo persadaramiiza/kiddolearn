@@ -1,6 +1,7 @@
 {
   "name": "edutoon",
   "version": "0.0.1",
+  "packageManager": "pnpm@10.33.3",
   "description": "",
   "author": "",
   "private": true,

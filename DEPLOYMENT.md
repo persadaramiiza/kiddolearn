@@ -34,13 +34,13 @@ GEMINI_API_KEY=<gemini-api-key>
 Jika membuat Web Service manual, gunakan:
 
 ```bash
-npm ci --legacy-peer-deps && npm run build
+corepack enable && corepack pnpm install --frozen-lockfile && corepack pnpm run build
 ```
 
 Start command:
 
 ```bash
-npm run start:prod
+corepack pnpm run start:prod
 ```
 
 Health check path:
